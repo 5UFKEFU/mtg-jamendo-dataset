@@ -1,100 +1,233 @@
-非常棒的计划！既然你已经准备好了多个训练好的模型和对应的预测脚本，接下来我来帮你整理一份清晰简洁的 GitHub 使用说明（README）模板，方便你后续提交时直接复制使用：
+# 🎧 Jamendo 多模型音乐标签预测工具
 
-⸻
+本项目整合了多个基于 [Jamendo Dataset](https://mtg.github.io/jamendo-tagging/) 的音乐标签预测模型（如 CRNN、FCN、Musicnn、Attention 等），可快速对音频进行标签打标、模型评估与对比分析。
 
-🎧 Jamendo 多模型音乐标签预测工具
+---
 
-本项目收集并统一了多个基于 Jamendo Dataset 的音乐标签预测模型（如 CRNN、FCN、Musicnn、Attention 等），方便进行批量预测与模型对比分析。
-
-⸻
-
-📁 目录结构
+## 📁 项目结构
 
 .
-├── models/                 # 各模型的权重（.pth 文件）
-│   └── jamendo/
-│       └── crnn/attention/fcn/...
-├── scripts/               # 核心脚本
-│   ├── batch_predict_csv.py  # 批量预测主脚本（输出CSV/JSON）
-│   └── test.py            # 示例测试脚本
-├── data/                  # 输入音频或元数据（可选）
-├── results/               # 输出预测结果
-├── my_music/              # 链接或放置你的音频文件
+jeff_scripts/
+|-- batch_predict_csv.py
+|-- batch_predict.py
+|-- CNNMusicTags.py
+|-- demo.py
+|-- models
+|   |-- best_model.pth
+|   |-- jamendo
+|   |   |-- attention
+|   |   |   `-- best_model.pth
+|   |   |-- crnn
+|   |   |   `-- best_model.pth
+|   |   |-- fcn
+|   |   |   `-- best_model.pth
+|   |   |-- hcnn
+|   |   |   `-- best_model.pth
+|   |   |-- musicnn
+|   |   |   `-- best_model.pth
+|   |   |-- sample
+|   |   |   `-- best_model.pth
+|   |   |-- se
+|   |   |   `-- best_model.pth
+|   |   `-- short_res
+|   |       `-- best_model.pth
+|   |-- msd
+|   |   |-- attention
+|   |   |   `-- best_model.pth
+|   |   |-- crnn
+|   |   |   `-- best_model.pth
+|   |   |-- fcn
+|   |   |   `-- best_model.pth
+|   |   |-- hcnn
+|   |   |   `-- best_model.pth
+|   |   |-- musicnn
+|   |   |   `-- best_model.pth
+|   |   |-- musicnn600
+|   |   |   `-- best_model.pth
+|   |   |-- sample
+|   |   |   `-- best_model.pth
+|   |   |-- se
+|   |   |   `-- best_model.pth
+|   |   `-- short_res
+|   |       `-- best_model.pth
+|   `-- mtat
+|       |-- attention
+|       |   `-- best_model.pth
+|       |-- crnn
+|       |   `-- best_model.pth
+|       |-- fcn
+|       |   `-- best_model.pth
+|       |-- hcnn
+|       |   `-- best_model.pth
+|       |-- musicnn
+|       |   `-- best_model.pth
+|       |-- sample
+|       |   `-- best_model.pth
+|       `-- se
+|           `-- best_model.pth
+|-- my_music -> /hls_data/my_music
+`-- run_all_models.py
+---
 
+## ⚙️ 使用方法
 
+### 1. 准备音频
 
-⸻
+将 `.wav` 文件放入 `my_music/` 目录中（或其他你指定的路径）。
+不要放 mp3，可能不支持，需要先使用 ffmpeg 来转换一下，没有测试。
+### 2. 执行批量预测
 
-⚙️ 使用方式
-
-1. 准备音频
-
-将待预测的音频（如 .wav）文件放入 my_music/ 文件夹（默认）。
-
-2. 执行批量预测
-
-python scripts/batch_predict_csv.py \
+```bash
+python batch_predict_csv.py \
     --input_dir my_music \
     --output_dir results \
     --model_dir models/jamendo \
     --top_k 5
+
+
+python batch_predict_csv.py --dataset jamendo --model sample --audio_folder my_music
+python batch_predict_csv.py --dataset jamendo --model se --audio_folder my_music
+
 
 参数说明：
-	•	--input_dir：你的音频路径（支持 .wav, .mp3）
-	•	--output_dir：结果输出路径
-	•	--model_dir：模型所在目录，支持如下子目录结构：
-
-models/jamendo/{crnn,fcn,hcnn,attention,...}/best_model.pth
-
-
-	•	--top_k：每首歌输出前K个标签（默认5）
+	•	--input_dir：音频文件所在目录
+	•	--output_dir：预测结果输出目录（自动生成多个模型的结果）
+	•	--model_dir：模型文件目录，应包含子目录 crnn/, fcn/, musicnn/ 等，每个子目录下有 best_model.pth
+	•	--top_k：每个音频输出前 K 个标签（默认 5）
 
 ⸻
 
-🧪 示例
+🧪 示例输出
 
-python scripts/batch_predict_csv.py \
-    --input_dir my_music \
-    --output_dir results \
-    --model_dir models/jamendo \
-    --top_k 5
+执行后会在 results/ 目录生成如下文件：
 
-将输出：
-	•	results_jamendo_<model>_YYYYMMDD.json
-	•	results_jamendo_<model>_YYYYMMDD.csv
+results_jamendo_crnn_YYYYMMDD.json
+results_jamendo_fcn_YYYYMMDD.json
+...
 
-⸻
+每个文件是该模型对所有音频的标签预测结果（Top-K 标签 + 置信度）。
 
-🔬 模型支持列表
 
-支持以下模型（基于 SOTA Music Tagging Models 改写）：
-	•	crnn
-	•	fcn
-	•	musicnn
-	•	hcnn
-	•	attention
-	•	sample
-	•	se
-	•	short_res
 
-⸻
-
-📊 后续分析
-
-你可以使用 [analysis notebook] 或 pandas 处理 JSON/CSV 进行标签分布分析、模型对比等。我们推荐使用 Top-K 标签一致性 + Jaccard 相似度 来评估模型预测的稳定性。
-
-⸻
-
-📦 依赖
-
-pip install torch torchaudio pandas librosa
-
+python run_all_models.py --dataset jamendo --audio_folder my_music
+	•	脚本会在执行前先查找 results_jamendo_<model>_20250419.csv（日期自动取当天）。
+	•	若文件已存在，则打印 ⏩ <model> 已有今日结果，跳过 并继续下一个模型。
+	•	若不存在，就调用 batch_predict_csv.py 正常跑模型并生成结果。
 
 
 ⸻
 
-如果你还想我帮你写 .gitignore、requirements.txt 或加个 Colab demo，也可以直接说 😎
+✅ 支持的模型
 
+模型名称	描述
+crnn	基于卷积 + RNN 的模型
+fcn	全卷积网络
+musicnn	基于 Musicnn 特征
+hcnn	深度卷积网络
+attention	带注意力机制的模型
+se	squeeze-excitation 机制模型
+short_res	轻量化 ResNet
+sample	测试模型
+…	
+
+所有模型可在 models/jamendo/<model_name>/best_model.pth 下找到。
+
+⸻
+
+📊 后续分析建议
+	•	Jaccard 相似度分析：比较不同模型 Top-K 标签预测的一致性
+	•	标签分布可视化：标签词云、频率柱状图
+	•	预测置信度统计：平均概率分布
+	•	标签对比分析：跨模型标签一致率对比表格或热图
+
+推荐使用 Jupyter 或 Python 脚本进行定制化分析。
+
+⸻
+
+🧩 依赖安装
+
+pip install torch torchaudio librosa pandas
+
+我是在 Python3.11.9下面成功的：
+pip list
+Package                  Version
+------------------------ -----------
+audioread                3.0.1
+beautifulsoup4           4.13.4
+certifi                  2025.1.31
+cffi                     1.17.1
+charset-normalizer       3.4.1
+cycler                   0.12.1
+decorator                5.2.1
+filelock                 3.18.0
+fonttools                4.57.0
+fsspec                   2025.3.2
+gdown                    4.2.1
+idna                     3.10
+Jinja2                   3.1.6
+joblib                   1.4.2
+kiwisolver               1.4.8
+lazy_loader              0.4
+librosa                  0.11.0
+llvmlite                 0.44.0
+MarkupSafe               3.0.2
+matplotlib               3.5.1
+mpmath                   1.3.0
+msgpack                  1.1.0
+networkx                 3.4.2
+numba                    0.61.2
+numpy                    1.26.4
+nvidia-cublas-cu12       12.4.5.8
+nvidia-cuda-cupti-cu12   12.4.127
+nvidia-cuda-nvrtc-cu12   12.4.127
+nvidia-cuda-runtime-cu12 12.4.127
+nvidia-cudnn-cu12        9.1.0.70
+nvidia-cufft-cu12        11.2.1.3
+nvidia-curand-cu12       10.3.5.147
+nvidia-cusolver-cu12     11.6.1.9
+nvidia-cusparse-cu12     12.3.1.170
+nvidia-cusparselt-cu12   0.6.2
+nvidia-nccl-cu12         2.21.5
+nvidia-nvjitlink-cu12    12.4.127
+nvidia-nvtx-cu12         12.4.127
+packaging                24.2
+pandas                   1.5.3
+pillow                   11.2.1
+pip                      25.0.1
+platformdirs             4.3.7
+pooch                    1.8.2
+pycparser                2.22
+pyparsing                3.2.3
+PySocks                  1.7.1
+python-dateutil          2.9.0.post0
+pytz                     2025.2
+requests                 2.32.0
+scikit-learn             1.3.2
+scipy                    1.10.0
+setuptools               65.5.0
+six                      1.17.0
+soundfile                0.13.1
+soupsieve                2.6
+soxr                     0.5.0.post1
+sympy                    1.13.1
+tabulate                 0.9.0
+threadpoolctl            3.6.0
+torch                    2.6.0
+torchaudio               2.6.0
+torchlibrosa             0.1.0
+tqdm                     4.62.3
+triton                   3.2.0
+typing_extensions        4.13.2
+urllib3                  1.26.19
+
+
+⸻
+
+📌 许可协议
+
+MIT License
+
+---
 
 # The MTG-Jamendo Dataset
 
