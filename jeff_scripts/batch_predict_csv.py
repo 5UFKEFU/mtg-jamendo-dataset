@@ -16,20 +16,20 @@ import torch.nn as nn
 
 # ────────────────────────── 自动导入模型定义 ──────────────────────────
 HERE = os.path.dirname(os.path.abspath(__file__))
+LABEL_MSD600_FILE = os.path.join(HERE, "label_msd600_zh.csv")
 
 def import_models_pkg():
-    """在常见目录中查找 `training/model.py` 或 `models/` 包并导入"""
     SEARCH_PATHS = [
-        os.path.join(HERE, "training"),                      # ./training
-        os.path.join(HERE, "..", "training"),                # ../training
-        os.path.join(HERE, "models"),                        # ./models  (包)
+        os.path.join(HERE, "training"),
+        os.path.join(HERE, "..", "training"),
+        os.path.join(HERE, "models"),
     ]
     for p in SEARCH_PATHS:
-        if os.path.isfile(os.path.join(p, "model.py")):      # 旧结构
+        if os.path.isfile(os.path.join(p, "model.py")):
             sys.path.insert(0, p)
             import model as mdl
             return mdl
-        if os.path.isfile(os.path.join(p, "__init__.py")):   # models/ 包
+        if os.path.isfile(os.path.join(p, "__init__.py")):
             sys.path.insert(0, os.path.dirname(p))
             import models as mdl
             return mdl
@@ -38,64 +38,61 @@ def import_models_pkg():
 md = import_models_pkg()
 
 # ────────────────────────── 标签表 ──────────────────────────
-# 仅示例：JAMENDO56；MTAT50 / MSD* 可自行补全
-JAMENDO56: List[Tuple[str, str]] = [
-    # genre
-    ("classical", "古典"), ("baroque", "巴洛克"), ("electronic", "电子"), ("edm", "EDM"), ("house", "浩室"),
-    ("techno", "电子舞曲"), ("trance", "恍惚"), ("dubstep", "低音爆破"), ("rock", "摇滚"), ("hard rock", "硬摇滚"),
-    ("metal", "金属"), ("punk", "朋克"), ("shoegaze", "自赏"), ("math rock", "数学摇滚"), ("jazz", "爵士"),
-    ("blues", "布鲁斯"), ("country", "乡村"), ("folk", "民谣"), ("bossa nova", "巴萨诺瓦"), ("hip-hop", "嘻哈"),
-    ("trap", "陷阱"), ("drill", "德律"), ("rap", "说唱"), ("pop", "流行"), ("r&b", "节奏布鲁斯"),
-    ("soul", "灵魂乐"), ("funk", "放克"), ("reggae", "雷鬼"), ("experimental", "实验"), ("ambient", "氛围"),
-    ("cinematic", "电影感"), ("lo-fi", "低保真"), ("new age", "新世纪"), ("latin", "拉丁"), ("k-pop", "韩流"),
-    ("j-pop", "日流"), ("african", "非洲"), ("celtic", "凯尔特"), ("indian classical", "印度古典"), ("tibetan", "藏族"),
-    ("world", "世界音乐"),
-
-    # mood
-    ("happy", "快乐"), ("sad", "悲伤"), ("angry", "愤怒"), ("calm", "平静"), ("relaxed", "放松"),
-    ("romantic", "浪漫"), ("epic", "史诗"), ("dark", "黑暗"), ("fun", "有趣"), ("hopeful", "希望"),
-    ("melancholic", "忧郁"), ("uplifting", "鼓舞人心"), ("nostalgic", "怀旧"), ("tense", "紧张"),
-    ("dreamy", "梦幻"), ("lonely", "孤独"), ("confident", "自信"), ("peaceful", "宁静"),
-    ("mysterious", "神秘"), ("sarcastic", "讽刺"),
-
-    # scene
-    ("party", "派对"), ("travel", "旅行"), ("sleep", "睡眠"), ("study", "学习"), ("focus", "专注"),
-    ("workout", "健身"), ("running", "跑步"), ("driving", "开车"), ("shopping", "逛街"),
-    ("meditation", "冥想"), ("yoga", "瑜伽"), ("background", "背景音乐"), ("holiday", "假日"),
-    ("birthday", "生日"), ("christmas", "圣诞"), ("wedding", "婚礼"), ("cooking", "做饭"),
-    ("gaming", "游戏"), ("festival", "节庆"), ("cinematic trailer", "电影预告"),
-
-    # instrument
-    ("piano", "钢琴"), ("violin", "小提琴"), ("cello", "大提琴"), ("flute", "长笛"), ("clarinet", "单簧管"),
-    ("saxophone", "萨克斯"), ("trumpet", "小号"), ("banjo", "班卓琴"), ("guzheng", "古筝"),
-    ("erhu", "二胡"), ("accordion", "手风琴"), ("sitar", "西塔琴"), ("harp", "竖琴"),
-    ("bass", "贝斯"), ("drums", "鼓"), ("guitar", "吉他"), ("electric guitar", "电吉他"),
-    ("acoustic guitar", "木吉他"), ("synthesizer", "合成器"), ("percussion", "打击乐"),
-    ("beat drop", "爆点"),
-
-    # vocal
-    ("vocals", "人声"), ("male vocal", "男声"), ("female vocal", "女声"), ("duet", "对唱"),
-    ("choral", "合唱"), ("a cappella", "无伴奏"), ("spoken word", "口语"), ("autotune", "电音修音"),
-    ("shouting", "喊叫"), ("whistling", "口哨"), ("beatboxing", "口技"), ("falsetto", "假声"),
-    ("growl", "吼唱"), ("harmonized", "和声"), ("talkbox", "语音合成"), ("vocoded", "编码人声"),
-
-    # others
-    ("live", "现场"), ("instrumental", "器乐"), ("cover", "翻唱"), ("original", "原创"),
-    ("remix", "混音"), ("loop", "循环"), ("vintage", "复古"), ("modern", "现代"),
-    ("retro", "怀旧"), ("nature", "自然声音"), ("asmr", "ASMR"), ("minimal", "极简"),
-    ("experimental", "实验"), ("synthwave", "合成波"), ("orchestral", "交响"), ("indie", "独立")
+JAMENDO56: list[tuple[str, str]] = [
+    # idx : (English      , 中文)
+    ("serious", "严肃"), ("relax", "放松"), ("dark", "黑暗"), ("energetic", "能量"),
+    ("acoustic", "原声"), ("happy", "快乐"), ("romantic", "浪漫"), ("violent", "激烈"),
+    ("sad", "悲伤"), ("epic", "史诗"), ("industrial", "工业"), ("dramatic", "戏剧性"),
+    ("action", "动作"), ("hope", "希望"), ("mysterious", "神秘"), ("space", "太空"),
+    ("meditative", "冥想"), ("adventure", "冒险"), ("documentary", "纪录片"), ("nature", "自然"),
+    ("motivational", "励志"), ("sci‑fi", "科幻"), ("christmas", "圣诞"), ("retro", "复古"),
+    ("spy", "谍战"), ("corporate", "企业"), ("disco", "迪斯科"), ("optimistic", "乐观"),
+    ("advertising", "广告"), ("dramatic building", "渐进戏剧"), ("kids", "儿童"), ("funk", "放克"),
+    ("groovy", "律动"), ("calm", "平静"), ("uplifting", "提振"), ("chill", "轻松"),
+    ("travel", "旅行"), ("melancholic", "忧郁"), ("party", "派对"), ("fashion", "时尚"),
+    ("spy/detective", "侦探"), ("positive", "积极"), ("background", "背景"), ("powerful", "力量"),
+    ("sexy", "性感"), ("groove", "律动感"), ("feelgood", "舒畅"), ("drama", "剧情"),
+    ("cool", "酷炫"), ("adrenaline", "肾上腺素"), ("adrenalin", "肾上腺素 (同义)"), ("dreamy", "梦幻"),
+    ("inspiring", "鼓舞"), ("energetic build", "能量渐进"), ("funny", "幽默"), ("victory", "胜利"),
+    ("pensive", "沉思"), ("grooves", "律动感 (复数)"), ("tension", "紧张")
 ]
 
-MTAT50 = [(f"tag_{i}", f"tag_{i}") for i in range(50)]  # 占位
-MSD50  = MTAT50
-MSD600 = [(f"tag_{i:03d}",)*2 for i in range(600)]
+MTAT50 = [
+    "rock","pop","alternative","indie","electronic","female vocalists","dance","00s",
+    "alternative rock","jazz","beautiful","metal","chillout","male vocalists",
+    "classic rock","soul","indie rock","mellow","electronica","80s","folk","90s",
+    "chill","instrumental","punk","oldies","blues","hard rock","ambient","acoustic",
+    "experimental","female vocalist","guitar","hip-hop","70s","party","country",
+    "easy listening","sexy","catchy","funk","electro","heavy metal","progressive rock",
+    "60s","rnb","indie pop","sad","house","happy"
+]
+
+MSD50 = MTAT50
+
+def load_msd600_labels() -> list[tuple[str, str]]:
+    if not os.path.exists(LABEL_MSD600_FILE):
+        print("⚠️ 未找到 label_msd600_zh.csv，使用默认标签")
+        return [(f"tag_{i:03d}",)*2 for i in range(600)]
+    rows = []
+    with open(LABEL_MSD600_FILE, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or "," not in line:
+                continue
+            parts = line.split(",", 1)
+            tag_en = parts[0].split(" ", 1)[-1]
+            tag_zh = parts[1]
+            rows.append((tag_en, tag_zh))
+    print(f"📖 已加载 MSD600 标签：{len(rows)} 条")
+    return rows
 
 def tag_table(ds: str, ncls: int):
     if ds == "jamendo": return JAMENDO56
     if ds == "mtat":    return MTAT50
-    if ds == "msd":     return MSD50 if ncls==50 else MSD600
+    if ds == "msd":     return MSD50 if ncls == 50 else load_msd600_labels()
     return []
 
+# ⬇️ 其余代码维持不变，如有后续需求再进行集成
 # ────────────────────────── CLI ──────────────────────────
 def cli():
     ap = argparse.ArgumentParser()

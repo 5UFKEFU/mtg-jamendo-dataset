@@ -1,0 +1,600 @@
+01 accordion,手风琴
+02 acousticguitar,木吉他
+03 acoustic,原声
+04 action,动作
+05 adult,成人
+06 advertising,广告
+07 africa,非洲
+08 african,非洲风
+09 alabama,阿拉巴马
+10 alarmclock,闹钟
+11 alaska,阿拉斯加
+12 alcohol,酒精
+13 alternative,另类
+14 ambient,氛围
+15 america,美国
+16 american,美式
+17 americana,美式民谣
+18 animals,动物
+19 anthem,圣歌
+20 anti-folk,反民谣
+21 anthems,颂歌
+22 arizona,亚利桑那
+23 art,艺术
+24 asian,亚洲
+25 atmosphere,氛围
+26 atlanta,亚特兰大
+27 atmospheric,氛围化
+28 audience,观众
+29 australia,澳大利亚
+30 australian,澳洲
+31 autumn,秋天
+32 avantgarde,先锋
+33 background,背景
+34 banjo,班卓琴
+35 baroque,巴洛克
+36 battle,战斗
+37 beat,节拍
+38 beats,鼓点
+39 beautiful,优美
+40 bed,床
+41 bedroom,卧室
+42 beer,啤酒
+43 birds,鸟鸣
+44 birth,出生
+45 birthday,生日
+46 blues,布鲁斯
+47 bossa,波萨
+48 bossa nova,巴莎诺瓦
+49 bounce,弹跳
+50 breakbeat,碎拍
+51 breaks,断拍
+52 british,英式
+53 broken beat,碎拍
+54 cabaret,歌舞秀
+55 cajun,卡郡
+56 california,加州
+57 calm,平静
+58 canada,加拿大
+59 canadian,加国
+60 car,汽车
+61 carnival,狂欢节
+62 cello,大提琴
+63 caribbean,加勒比
+64 celtic,凯尔特
+65 chanson,香颂
+66 chicago,芝加哥
+67 children,儿童
+68 chill,轻松
+69 china,中国
+70 chinese,中文
+71 choral,合唱
+72 christ,基督
+73 christian,基督教
+74 christmas,圣诞
+75 church,教堂
+76 classic rock,经典摇滚
+77 classical,古典
+78 club,夜店
+79 cocktail,鸡尾酒
+80 comedy,喜剧
+81 commercial,商业
+82 complex,复杂
+83 confused,迷离
+84 country,乡村
+85 cover,翻唱
+86 cuban,古巴
+87 dance,舞曲
+88 dancehall,舞厅
+89 dark,黑暗
+90 death,死亡
+91 deathmetal,死亡金属
+92 deep,深邃
+93 deep house,深浩室
+94 delta,三角洲
+95 demo,演示
+96 desert,沙漠
+97 dirty,肮脏
+98 disco,迪斯科
+99 downtempo,低速
+100 drama,剧情
+101 drone,嗡鸣
+102 drum and bass,鼓打贝斯
+103 dub,杜步
+104 dubstep,杜步
+105 eastcoast,东海岸
+106 eclectic,折衷
+107 electro,电音
+108 electroclash,电击
+109 electronic,电子
+110 electronica,电子乐
+111 electropop,电子流行
+112 electrohouse,电子浩室
+113 electroswing,电子摇摆
+114 emo,情绪核
+115 energy,能量
+116 epic,史诗
+117 ethereal,空灵
+118 europe,欧洲
+119 european,欧式
+120 exciting,激昂
+121 experimental,实验
+122 extreme,极端
+123 fado,fado
+124 family,家庭
+125 fashion,时尚
+126 female,女性
+127 female vocalists,女歌手
+128 female vocals,女声
+129 fieldrecording,现场录音
+130 film,电影
+131 florida,佛罗里达
+132 focus,专注
+133 folk,民谣
+134 folklore,民俗
+135 french,法式
+136 funk,放克
+137 fusion,融合
+138 future,未来
+139 game,游戏
+140 gangsta,帮派
+141 garage,车库摇滚
+142 gay,彩虹
+143 german,德语
+144 germany,德国
+145 ghetto,贫民区
+146 glitch,爆裂
+147 gospel,福音
+148 goth,哥特
+149 gothic,哥特风
+150 groove,律动
+151 grunge,垃圾摇滚
+152 guitar,吉他
+153 gym,健身
+154 haiti,海地
+155 happy,快乐
+156 hard,硬派
+157 hardcore,硬核
+158 hardhouse,硬浩室
+159 harpsichord,大键琴
+160 hawaii,夏威夷
+161 heavy,沉重
+162 heavy metal,重金属
+163 high,高潮
+164 hip hop,嘻哈
+165 hip-hop,嘻哈
+166 holiday,假日
+167 holidays,假期
+168 house,浩室
+169 hypnotic,催眠
+170 india,印度
+171 indian,印度风
+172 indie,独立
+173 indie pop,独立流行
+174 industrial,工业
+175 instrumental,器乐
+176 irish,爱尔兰
+177 israel,以色列
+178 italian,意大利
+179 italy,意式
+180 j-pop,J‑Pop
+181 japan,日本
+182 japanese,日语
+183 jazz,爵士
+184 jersey,泽西
+185 joy,喜悦
+186 jungle,丛林
+187 k-pop,K‑Pop
+188 kids,儿童
+189 korea,韩国
+190 korean,韩语
+191 latin,拉丁
+192 latin america,拉丁美洲
+193 latino,拉丁风
+194 lax,放松
+195 lazy,慵懒
+196 legend,传奇
+197 live,现场
+198 lounge,沙发
+199 love,爱情
+200 lo-fi,低保真
+201 loop,循环
+202 lullaby,摇篮曲
+203 madrigal,牧歌
+204 mall,商场
+205 marimba,马林巴
+206 meditation,冥想
+207 melancholy,忧郁
+208 melodic,旋律
+209 merengue,梅伦格
+210 metal,金属
+211 mexico,墨西哥
+212 michigan,密歇根
+213 minimal,极简
+214 mood,情绪
+215 motown,摩城
+216 mountain,山地
+217 movie,电影
+218 music,音乐
+219 musique concrete,具象音乐
+220 mystery,神秘
+221 native,本土
+222 nature,自然
+223 new age,新世纪
+224 new wave,新浪潮
+225 new york,纽约
+226 noise,噪音
+227 north,北方
+228 north carolina,北卡
+229 norwegian,挪威
+230 opera,歌剧
+231 orchestra,管弦
+232 oriental,东方
+233 party,派对
+234 peace,和平
+235 piano,钢琴
+236 piano solo,钢琴独奏
+237 pipes,风笛
+238 pop,流行
+239 popular,流行
+240 post punk,后朋
+241 post-rock,后摇
+242 power,力量
+243 power pop,力量流行
+244 progressive,前卫
+245 progressive metal,前卫金属
+246 progressive rock,前卫摇滚
+247 psychedelic,迷幻
+248 punk,朋克
+249 quiet,安静
+250 r&b,R&B
+251 radio,电台
+252 rain,雨声
+253 rap,说唱
+254 reggae,雷鬼
+255 remix,混音
+256 retro,复古
+257 rhythm,节奏
+258 rhythm and blues,R&B
+259 rio,里约
+260 rnb,R&B
+261 rock,摇滚
+262 rock and roll,摇滚乐
+263 romantic,浪漫
+264 romantic era,浪漫主义
+265 sad,悲伤
+266 salsa,萨尔萨
+267 sampler,采样
+268 samba,桑巴
+269 sample,采样
+270 saxophone,萨克斯
+271 sci-fi,科幻
+272 scotland,苏格兰
+273 scream,尖叫
+274 season,季节
+275 seattle,西雅图
+276 sexy,性感
+277 shoegaze,凝视
+278 shout,呼喊
+279 shuffle,洗牌
+280 singalong,跟唱
+281 singer,歌手
+282 singer-songwriter,唱作人
+283 ska,斯卡
+284 sleep,睡眠
+285 slow,慢板
+286 smooth,丝滑
+287 solo,独奏
+288 song,歌曲
+289 songs,歌曲
+290 soul,灵魂
+291 sound,声音
+292 sound effects,音效
+293 soundtrack,原声
+294 south,南方
+295 southern,南部
+296 space,太空
+297 spain,西班牙
+298 spanish,西语
+299 spoken,口语
+300 spring,春天
+301 stoner,石人摇滚
+302 street,街头
+303 strings,弦乐
+304 summer,夏天
+305 sunny,晴朗
+306 surf,冲浪
+307 sweden,瑞典
+308 swedish,瑞典
+309 swing,摇摆
+310 synth,合成器
+311 synthpop,合成流行
+312 synthesizer,合成器
+313 synthwave,合成浪潮
+314 tagalog,塔加洛
+315 tango,探戈
+316 tech,科技
+317 technical,技术
+318 techno,科技舞曲
+319 teens,青少年
+320 tenor,男高音
+321 texas,德州
+322 theme,主题
+323 traditional,传统
+324 trailer,预告
+325 trance,Trance
+326 trap,陷阱
+327 travel,旅行
+328 trumpet,小号
+329 turkey,土耳其
+330 turkish,土耳其语
+331 uk,英国
+332 ukraine,乌克兰
+333 ukrainian,乌克兰语
+334 underground,地下
+335 urban,都市
+336 vaporwave,蒸气波
+337 video,视频
+338 violin,小提琴
+339 vocal,人声
+340 vocals,人声
+341 wales,威尔士
+342 war,战争
+343 washington,华盛顿
+344 wave,浪潮
+345 winter,冬天
+346 women,女性
+347 world,世界
+348 yoga,瑜伽
+349 young,年轻
+350 youth,青春
+351 avant,avant
+352 balearic,balearic
+353 big beat,big beat
+354 baile,baile
+355 boogie,boogie
+356 brazil,brazil
+357 brass,brass
+358 breakcore,breakcore
+359 chillwave,chillwave
+360 chiptune,chiptune
+361 coldwave,coldwave
+362 country blues,country blues
+363 crunk,crunk
+364 cyberpunk,cyberpunk
+365 detroit,detroit
+366 dub techno,dub techno
+367 ebm,ebm
+368 electroacoustic,electroacoustic
+369 eurodance,eurodance
+370 gabber,gabber
+371 gothic rock,gothic rock
+372 grindcore,grindcore
+373 halloween,halloween
+374 hardcore techno,hardcore techno
+375 idm,idm
+376 illbient,illbient
+377 jangle,jangle
+378 japan,japan
+379 jungle drum and bass,jungle drum and bass
+380 krautrock,krautrock
+381 lo-fi house,lo-fi house
+382 mashup,mashup
+383 math rock,math rock
+384 microhouse,microhouse
+385 minimal techno,minimal techno
+386 moombahton,moombahton
+387 nederlands,nederlands
+388 new jack swing,new jack swing
+389 nu disco,nu disco
+390 nu metal,nu metal
+391 pagode,pagode
+392 piano house,piano house
+393 power electronics,power electronics
+394 psytrance,psytrance
+395 reggaeton,reggaeton
+396 rockabilly,rockabilly
+397 samba rock,samba rock
+398 shoegazer,shoegazer
+399 slad,slad
+400 slowcore,slowcore
+401 sludge,sludge
+402 soca,soca
+403 space rock,space rock
+404 speed metal,speed metal
+405 synth punk,synth punk
+406 techno pop,techno pop
+407 テクノ,japanese techno
+408 trancecore,trancecore
+409 twee,twee
+410 uk garage,uk garage
+411 uplifting,uplifting
+412 vaportrap,vaportrap
+413 zouk,zouk
+414 zydeco,zydeco
+415 amapiano,amapiano
+416 bachata,bachata
+417 bassline,bassline
+418 bhangra,bhangra
+419 bollywood,bollywood
+420 bossanova,bossanova
+421 bounce music,bounce music
+422 cantopop,cantopop
+423 carols,carols
+424 ceilidh,ceilidh
+425 cloud rap,cloud rap
+426 cumbia,cumbia
+427 dance-pop,dance-pop
+428 dembow,dembow
+429 drill,drill
+430 eurobeat,eurobeat
+431 funk carioca,funk carioca
+432 future bass,future bass
+433 grime,grime
+434 guzheng,古筝
+435 hardstyle,hardstyle
+436 hyperpop,hyperpop
+437 j-core,j-core
+438 jit,jit
+439 kizomba,kizomba
+440 kwaito,kwaito
+441 liquid dnb,liquid dnb
+442 mallsoft,mallsoft
+443 mandopop,mandopop
+444 mariachi,mariachi
+445 merseybeat,merseybeat
+446 minimal wave,minimal wave
+447 mpb,mpb
+448 neosoul,neosoul
+449 norteño,norteño
+450 phonk,phonk
+451 psychobilly,psychobilly
+452 qawwali,qawwali
+453 shoegazer,shoegazer
+454 skweee,skweee
+455 soca,soca
+456 soukous,soukous
+457 synthwave,synthwave
+458 tarantella,tarantella
+459 tuki,tuki
+460 türkçe pop,türkçe pop
+461 uk funky,uk funky
+462 vapor soul,vapor soul
+463 violão,巴西吉他
+464 vaportrap,vaportrap
+465 zouglou,zouglou
+466 baile funk,baile funk
+467 chap hop,chap hop
+468 juke,juke
+469 jumpstyle,jumpstyle
+470 makossa,makossa
+471 merengue tipico,merengue tipico
+472 mp3,mp3
+473 pagodão,pagodão
+474 parisian,parisian
+475 perreo,perreo
+476 protohouse,protohouse
+477 psybient,psybient
+478 riddim,riddim
+479 rocksteady,rocksteady
+480 skiffle,skiffle
+481 speedcore,speedcore
+482 suomisaundi,suomisaundi
+483 tambouriza,tambouriza
+484 teddy boy,teddy boy
+485 tropical house,tropical house
+486 vaportrap,vaportrap
+487 vocoder,vocoder
+488 zouk bass,zouk bass
+489 kompa,kompa
+490 morna,morna
+491 mbalax,mbalax
+492 sega,sega
+493 afrobeats,afrobeats
+494 amapiano,amapiano
+495 arabtrap,arabtrap
+496 baile house,baile house
+497 baile tech,baile tech
+498 baile trance,baile trance
+499 baile violin,baile violin
+500 beatdown,beatdown
+501 dembow,dembow
+502 ethnotrance,ethnotrance
+503 footwork,footwork
+504 future garage,future garage
+505 guaracha,guaracha
+506 hardvapour,hardvapour
+507 makina,makina
+508 neoperreo,neoperreo
+509 neurofunk,neurofunk
+510 raggatek,raggatek
+511 sad rap,sad rap
+512 salsa choke,salsa choke
+513 sambass,sambass
+514 shibuya-kei,涩谷系
+515 speed house,speed house
+516 synthcore,synthcore
+517 trance metal,trance metal
+518 uk bass,uk bass
+519 vapor funk,vapor funk
+520 xenharmonic,xenharmonic
+521 zouk love,zouk love
+522 atl trap,atl trap
+523 bass music,bass music
+524 bounce beats,bounce beats
+525 breakcore jungle,breakcore jungle
+526 charanga,charanga
+527 cloud trap,cloud trap
+528 digicore,digicore
+529 dream pop,梦幻流行
+530 florida breaks,florida breaks
+531 glitch hop,glitch hop
+532 happy hardcore,快乐硬核
+533 j-rock,J‑Rock
+534 latin trap,latin trap
+535 moombahton,moombahton
+536 nightcore,nightcore
+537 post-dubstep,post-dubstep
+538 progressive breaks,progressive breaks
+539 psybass,psybass
+540 synthwave retro,synthwave retro
+541 tekno,tekno
+542 tribal house,tribal house
+543 turbo folk,turbo folk
+544 vapor drill,vapor drill
+545 west coast rap,西岸说唱
+546 zouk retro,zouk retro
+547 zouk remix,zouk remix
+548 slam metal,slam metal
+549 melodic house,melodic house
+550 phonk house,phonk house
+551 bossa trap,bossa trap
+552 screamo,尖吼
+553 ambient trap,ambient trap
+554 chill trap,休闲 Trap
+555 deep dubstep,深杜步
+556 electro swing,electro swing
+557 future riddim,future riddim
+558 glitchcore,glitchcore
+559 hard trap,硬 Trap
+560 jazz rap,jazz rap
+561 lofi hiphop,lofi hiphop
+562 melodic trap,melodic trap
+563 midtempo,midtempo
+564 pop rap,pop rap
+565 reggae fusion,雷鬼融合
+566 russian hardbass,俄硬低音
+567 sadgirl,sadgirl
+568 synth funk,synth funk
+569 texas rap,德州说唱
+570 wave trap,wave trap
+571 acoustic trap,acoustic trap
+572 baile lo-fi,baile lo-fi
+573 bedroom pop,bedroom pop
+574 chicha,chicha
+575 cloudpunk,cloudpunk
+576 cover trap,cover trap
+577 dreamcore,dreamcore
+578 fusion trap,fusion trap
+579 hypertrap,hypertrap
+580 lo-fi house,lo-fi house
+581 mellow breakbeat,mellow breakbeat
+582 minimal trap,minimal trap
+583 psych trance,psych trance
+584 retro wave,retro wave
+585 samba funk,samba funk
+586 slow funk,慢放克
+587 soft trap,soft trap
+588 synth pop,synth pop
+589 tropical trap,tropical trap
+590 uk drill,uk drill
+591 vapor dub,vapor dub
+592 vapor glitch,vapor glitch
+593 vapor metal,vapor metal
+594 vapor soul,vapor soul
+595 vapor trap,vapor trap
+596 world trap,world trap
+597 heavy trap,heavy trap
+598 dark trap,暗黑 Trap
+599 gospel trap,gospel trap
+600 zouk trap,zouk trap
