@@ -1,3 +1,101 @@
+非常棒的计划！既然你已经准备好了多个训练好的模型和对应的预测脚本，接下来我来帮你整理一份清晰简洁的 GitHub 使用说明（README）模板，方便你后续提交时直接复制使用：
+
+⸻
+
+🎧 Jamendo 多模型音乐标签预测工具
+
+本项目收集并统一了多个基于 Jamendo Dataset 的音乐标签预测模型（如 CRNN、FCN、Musicnn、Attention 等），方便进行批量预测与模型对比分析。
+
+⸻
+
+📁 目录结构
+
+.
+├── models/                 # 各模型的权重（.pth 文件）
+│   └── jamendo/
+│       └── crnn/attention/fcn/...
+├── scripts/               # 核心脚本
+│   ├── batch_predict_csv.py  # 批量预测主脚本（输出CSV/JSON）
+│   └── test.py            # 示例测试脚本
+├── data/                  # 输入音频或元数据（可选）
+├── results/               # 输出预测结果
+├── my_music/              # 链接或放置你的音频文件
+
+
+
+⸻
+
+⚙️ 使用方式
+
+1. 准备音频
+
+将待预测的音频（如 .wav）文件放入 my_music/ 文件夹（默认）。
+
+2. 执行批量预测
+
+python scripts/batch_predict_csv.py \
+    --input_dir my_music \
+    --output_dir results \
+    --model_dir models/jamendo \
+    --top_k 5
+
+参数说明：
+	•	--input_dir：你的音频路径（支持 .wav, .mp3）
+	•	--output_dir：结果输出路径
+	•	--model_dir：模型所在目录，支持如下子目录结构：
+
+models/jamendo/{crnn,fcn,hcnn,attention,...}/best_model.pth
+
+
+	•	--top_k：每首歌输出前K个标签（默认5）
+
+⸻
+
+🧪 示例
+
+python scripts/batch_predict_csv.py \
+    --input_dir my_music \
+    --output_dir results \
+    --model_dir models/jamendo \
+    --top_k 5
+
+将输出：
+	•	results_jamendo_<model>_YYYYMMDD.json
+	•	results_jamendo_<model>_YYYYMMDD.csv
+
+⸻
+
+🔬 模型支持列表
+
+支持以下模型（基于 SOTA Music Tagging Models 改写）：
+	•	crnn
+	•	fcn
+	•	musicnn
+	•	hcnn
+	•	attention
+	•	sample
+	•	se
+	•	short_res
+
+⸻
+
+📊 后续分析
+
+你可以使用 [analysis notebook] 或 pandas 处理 JSON/CSV 进行标签分布分析、模型对比等。我们推荐使用 Top-K 标签一致性 + Jaccard 相似度 来评估模型预测的稳定性。
+
+⸻
+
+📦 依赖
+
+pip install torch torchaudio pandas librosa
+
+
+
+⸻
+
+如果你还想我帮你写 .gitignore、requirements.txt 或加个 Colab demo，也可以直接说 😎
+
+
 # The MTG-Jamendo Dataset
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3826813.svg)](https://doi.org/10.5281/zenodo.3826813)
