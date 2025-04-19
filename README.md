@@ -2,72 +2,10 @@
 
 本项目整合了多个基于 [Jamendo Dataset](https://mtg.github.io/jamendo-tagging/) 的音乐标签预测模型（如 CRNN、FCN、Musicnn、Attention 等），可快速对音频进行标签打标、模型评估与对比分析。
 
----
-
 ## 📁 项目结构
 
-.
-jeff_scripts/
-|-- batch_predict_csv.py
-|-- batch_predict.py
-|-- CNNMusicTags.py
-|-- demo.py
-|-- models
-|   |-- best_model.pth
-|   |-- jamendo
-|   |   |-- attention
-|   |   |   `-- best_model.pth
-|   |   |-- crnn
-|   |   |   `-- best_model.pth
-|   |   |-- fcn
-|   |   |   `-- best_model.pth
-|   |   |-- hcnn
-|   |   |   `-- best_model.pth
-|   |   |-- musicnn
-|   |   |   `-- best_model.pth
-|   |   |-- sample
-|   |   |   `-- best_model.pth
-|   |   |-- se
-|   |   |   `-- best_model.pth
-|   |   `-- short_res
-|   |       `-- best_model.pth
-|   |-- msd
-|   |   |-- attention
-|   |   |   `-- best_model.pth
-|   |   |-- crnn
-|   |   |   `-- best_model.pth
-|   |   |-- fcn
-|   |   |   `-- best_model.pth
-|   |   |-- hcnn
-|   |   |   `-- best_model.pth
-|   |   |-- musicnn
-|   |   |   `-- best_model.pth
-|   |   |-- musicnn600
-|   |   |   `-- best_model.pth
-|   |   |-- sample
-|   |   |   `-- best_model.pth
-|   |   |-- se
-|   |   |   `-- best_model.pth
-|   |   `-- short_res
-|   |       `-- best_model.pth
-|   `-- mtat
-|       |-- attention
-|       |   `-- best_model.pth
-|       |-- crnn
-|       |   `-- best_model.pth
-|       |-- fcn
-|       |   `-- best_model.pth
-|       |-- hcnn
-|       |   `-- best_model.pth
-|       |-- musicnn
-|       |   `-- best_model.pth
-|       |-- sample
-|       |   `-- best_model.pth
-|       `-- se
-|           `-- best_model.pth
-|-- my_music -> /hls_data/my_music
-`-- run_all_models.py
----
+<img width="323" alt="image" src="https://github.com/user-attachments/assets/290eaa88-4f50-49aa-a241-9f11ee9afbef" />
+
 
 ## ⚙️ 使用方法
 
